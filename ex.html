@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Page Title</title>
+  <script>
+    window.onload = function() {
+      var hasConfirmed = false;
+
+      window.addEventListener('beforeunload', function (e) {
+        if (!hasConfirmed) {
+          var confirmationMessage = 'Are you sure you want to leave?';
+          (e || window.event).returnValue = confirmationMessage;
+          return confirmationMessage;
+        }
+      });
+
+      // If the user confirms, set hasConfirmed to true before leaving
+      document.addEventListener('visibilitychange', function () {
+        if (document.visibilityState === 'hidden') {
+          hasConfirmed = true;
+        }
+      });
+    };
+  </script>
+</head>
+<body>
+
+  <!-- Your page content goes here -->
+  <div id="one">
+    <h1>Welcome to Your Page!</h1>
+    <p>This is your content. A confirmation dialog will appear when attempting to leave the page.</p>
+  </div>
+<a href="#one">back</a>
+</body>
+</html>
