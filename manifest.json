@@ -4,7 +4,7 @@
     "description": "Sewak Global Solution",
     "start_url": "index.html",
     "display": "standalone",
-    "background_color": "#FFB534",
+    "background_color": "#FFFF53",
     "theme_color": "#FFFF53",
     "icons": [
         {
